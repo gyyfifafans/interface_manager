@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+</head>
+<body>
+	<!-- 左侧目录 -->
+	<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                项目
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body" id="pc">
+                <a href="#" class="test-pc">PC端</a>
+            </div>
+          
+            <div class="panel-body" id="shunguang">
+            	<a href="#" class="test-shunguang">顺逛端</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" 
+                href="#collapseTwo">
+                Mock
+            </a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+        </div>
+    </div>
+       <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a  data-parent="#accordion" 
+                href="{{url_for('hot_repair')}}" class="hotrepair">
+                热修复
+            </a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+        </div>
+    </div>
+</div>				
+
+		
+</body>
+</html>

@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--11/24 -->
+	<!--get post put delete 1.background:rgb(97, 175, 254); 2.title(div class=opblock opblock-post is-open) 3.param 4.request/response param(抽出) -->
+	<meta charset="UTF-8">
+	<title>接口详情</title>
+	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<!--link href="/static/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"-->
+	<!--link href="/static/bootstrap/css/index.css" rel="stylesheet" type="text/css"-->
+	<!--link rel="stylesheet" type="text/css" href="/static/swagger-ui.css" -->
+	<script type="text/javascript" src="/static/bootstrap/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
+	<style>
+		.opblock.opblock-post {
+    border-color: rgb(73, 204, 144);
+    background: rgba(73, 204, 144, 0.1);
+    }
+    
+		.post {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+}
+		.method {
+    font-size: 14px;
+    font-weight: 700;
+    min-width: 80px;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px;
+    font-family: "Titillium Web", sans-serif;
+    color: rgb(255, 255, 255);
+    padding: 6px 15px;
+    border-radius: 3px;
+    background: rgb(73, 204, 144);
+    
+}
+.url {
+    font-size: 16px;
+    display: flex;
+    -webkit-box-flex: 0;
+    -webkit-box-align: center;
+    align-items: center;
+    word-break: break-all;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 600;
+    color: rgb(59, 65, 81);
+    flex: 0 3 auto;
+    padding: 0px 10px;
+}
+
+.select {
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 2px 0px;
+    font-family: "Titillium Web", sans-serif;
+    color: rgb(59, 65, 81);
+    -webkit-appearance: none;
+    padding: 5px 40px 5px 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(65, 68, 78);
+    border-image: initial;
+    border-radius: 4px;
+  }
+
+
+
+.btn-try-out {
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+    font-family: "Titillium Web", sans-serif;
+    color: rgb(59, 65, 81);
+    padding: 5px 23px;
+    transition: all 0.3s;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(136, 136, 136);
+    border-image: initial;
+    border-radius: 4px;
+    background: transparent;
+}
+
+
+.table-container {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0px 10px;
+}
+
+.col parameter-col_name {
+    max-width: 45%;
+    min-width: 6em;
+    padding: 10px 0px;
+}
+
+
+table tbody tr td {
+    vertical-align: top;
+    padding: 10px 0px 0px;
+    
+}
+
+
+
+.body-param pre {
+    font-size: 12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    padding: 10px;
+    border-radius: 4px;
+    background: rgb(65, 68, 78);
+}
+
+
+
+.body-param pre span {
+    color: rgb(255, 255, 255);
+}
+
+
+
+.body-param-options {
+    font-size: 12px;
+    font-weight: 700;
+    font-family: "Titillium Web", sans-serif;
+    color: rgb(59, 65, 81);
+    margin: 0px 0px 5px;
+}
+
+.section-header h4 {
+    font-size: 14px;
+    -webkit-box-flex: 1;
+    font-family: "Titillium Web", sans-serif;
+    color: rgb(59, 65, 81);
+    flex: 1 1 0%;
+    margin: 0px;
+    display:inline-block;
+    float:left;
+    
+}
+.section-header {
+    min-height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.section-header label {
+    font-size: 12px;
+    font-weight: 700;
+    font-family: "Titillium Web", sans-serif;
+    color: rgb(59, 65, 81);
+    margin: 0px 0px 0px auto;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    float:right;
+}
+
+
+
+ui .tab li.active {
+    font-weight: 700;
+}
+
+.tab li.active {
+    position: relative;
+    padding-left: 0px;
+}
+.tab li {
+    font-size: 12px;
+    min-width: 90px;
+    cursor: pointer;
+    font-family: "Titillium Web", sans-serif;
+    color: rgb(59, 65, 81);
+    padding: 0px;
+}
+
+
+.tab-header{
+	float:left
+}
+
+.try-out{
+	float:right
+}
+
+
+	</style>
+</head>
+
+<body>
+		<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+     <div class="navbar-header" style="height:100px">
+        <a class="navbar-brand" href="#"><h1>接口</h1></a>
+     </div>
+     
+    </div>
+  </nav>
+  
+	<div class="opblock opblock-post is-open" id="">
+		<div class="post">
+			<span class="method">POST</span>
+			<span class="url">
+				<a class="" href="#">
+					<span>/pet</span>
+				</a>
+			</span>
+		</div>
+		
+		<div style="height: auto; border: none; margin: 0px; padding: 0px;">
+			<div class="body">
+				<div class="section">
+					<div class="section-header">
+						<div class="tab-header">
+							<h4 class="title">Parameters</h4>
+						</div>
+						<div class="try-out">
+							<button class="btn-try-out">Try it out</button>
+						</div>
+					</div>
+					<div class="table-container">
+						<table class="parameters">
+							<thead>
+								<tr>
+									<th class="col col_header parameter-col_name">Name</th>
+									<th class="col col_header parameter-col_description">Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="col parameter-col_name">
+										<div class="parameter_name required">
+											"body"
+											<span style="color:red;">&nbsp;*required</span>
+										</div>
+										<div class="parameter_type">
+											
+										</div>
+										<div class="parameter_deprecated"></div>
+										<div class="parameter_in>
+											"("
+											"body"
+											")"
+										</div>
+									</td>
+									<td class="col "parameter-col_description">
+										<div class="markdown">
+											<p>XXXXXXX</p>
+										</div>
+										<div>
+											<!--ul class="tab">
+												<li class="tabitem active">
+													<a class="tablinks" data-name="example">Example value</a>
+												</li>
+												<li class="tabitem">
+													<a class="tablinks" data-name="model">Model</a>
+												</li>
+											</ul-->
+											<a class="example" href="#">Example</a><a> | </a><a class="model" href="#">Model</a>
+											<div>
+												<div class="body-param">
+													<pre class="body-param__example microlight">
+	
+													</pre>
+												</div>
+												<div class="body-param-options">
+													<label for>
+														<span>Parameter content type</span>
+														<div class="content-type-wrapper body-param-content-type">
+															<select class="content-type">
+																<option value="application/json">application/json</option>
+																<option value="application/xml">application/xml</option>
+															</select>
+													  </div>
+													</label>
+											  </div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="execute-wrapper"></div>
+				<div class="response-wrapper">
+					<div class="responses-wrapper">
+						<div class="section-header">
+							<h4>Responses</h4>
+							<label>
+								<span>Response content type</span>
+								<div class="content-type-wrapper execute-content-type">
+									<select class="content-type">
+										<option value="application/xml">application/xml</option>
+										<option value="application/json">application/json</option>
+									</select>
+								</div>
+							</label>
+						</div>
+						<div class="responses-inner">
+							<table class="responses-table" >
+								<thead>
+									<tr class="responses-header">
+										<td class="col col_header response-col_status">Code</td>
+										<td class="col col_header response-col_description">Description</td>
+									</tr>
+								</thead>
+							  <tbody>
+							  	<tr class="response ">
+							  		<td class="col response-col_status">200</td>
+							  		<td class="col response-col_description">
+							  			<div class="response-col_description__inner">
+							  				<div class="body-param">
+							  					<pre>Sucesss input</pre>
+							  				</div>
+							  			</div>
+							  			<div class="response-content-type"></div>
+							  		</td>
+							  	</tr>
+							  	<tr class="response">
+							  		<td class="col response-col_status">405</td>
+							  		<td class="col response-col_description">
+							  			<div class="response-col_description_inner">
+							  				<div class="body-param">
+							  					<pre>Invaild input</pre>
+							  				</div>
+							  			</div>
+							  		</td>
+							  	</tr>
+							  </tbody>
+							</table>
+						</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+	
+	
+</body>
+
+
+
+</html>

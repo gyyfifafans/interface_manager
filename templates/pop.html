@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+		<!--pop-->
+		<div class="ctrl-pop hidden">
+			
+			<div class="pop">
+				<h2 class="pop-tit">+ 新增</h2>
+				<div class="pop-cont">
+					<dl>
+						 <dt>名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</dt>
+						 <dd><input type="text" placeholder="请输入接口名称" class="r-title" /></dd>
+					</dl>
+					<dl>
+						 <dt>请求地址：</dt>
+						 <dd><input type="text" placeholder="请输入请求URL" class="r-url" /></dd>
+					</dl>
+					<dl>
+						 <dt>所属页面：</dt>
+						 <dd>
+						 	<input type="text" placeholder="请输入所属页面" class="source-object" />
+						 </dd>
+					</dl>
+					<dl>
+						<dt>请求方式：</dt>
+						<dd>
+						 	<select name="" class="r-method">
+						 		<option value="" class="method-sed" hidden="hidden"></option>
+						 		<option value="get">GET</option>
+						 		<option value="post">POST</option>
+						 		<option value="delete">DELETE</option>
+						 		<option value="put">PUT</option>
+						 	</select>
+						</dd>
+					</dl>
+					<dl>
+						<dt>所属项目</dt>
+						<dd>
+							<select name="" class="r-project">
+								<option value="" class="project-sed" hidden="hidden"></option>
+								<option value="shunguang">顺逛端</option>
+								<option value="pc">PC端</option>
+							</select>
+						</dd>
+					</dl>
+					<dl>
+						<dt>请求参数：</dt>
+						<dd>
+						 	<textarea class="r-reqparams" name="" rows="" cols=""></textarea>
+						</dd>
+					</dl>
+					<dl>
+						<dt>期待返回：</dt>
+						<dd>
+						 	<textarea class="r-resparams" name="" rows="" cols=""></textarea>
+						</dd>
+					</dl>
+					<dl>
+						<dt>描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述：</dt>
+						<dd>
+						 	<textarea class="r-des" name="" rows="" cols=""></textarea>
+						</dd>
+					</dl>
+					<dl>
+						<dt>是否校验参数：</dt>
+						<dd>
+						 	<i class="myckbox myckbox-normal isJYrequst" onclick="mycheckbox();"></i>
+						</dd>
+					</dl>
+				</div>
+				<a href="javascript:void(0)" class="sure" data-type="add" onclick="add();">确定</a>
+				<a href="javascript:void(0)" class="cancle">取消</a>
+			</div>
+		</div>
+	
+	
+	
+</body>
+
+
+</html>

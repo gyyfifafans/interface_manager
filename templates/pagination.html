@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		
+		<style>
+			li{ display:inline} 
+		</style>
+		
+		
+	</head>
+<body>
+	
+
+
+<ul class="pagination">
+	{#% if pagination.has_prev %#}
+<li class="prev">
+<a style='background-color: lightgoldenrodyellow;color: brown;'>
+«
+</a>
+</li>
+{#% endif %#}
+{#% for p in pagination.iter_pages() %#}
+{#% if p == pagination.page %#}
+<li class="active">
+<!--a style='background-color: lightgoldenrodyellow;color: brown;'>{{ pagination.page }}</a-->
+<a style='background-color:lightgoldenrodyellow;color:brown;'>1</a>
+</li>
+{#% else %#}
+<!--li>
+<a style='background-color: lightgoldenrodyellow;color: green;'>{{ p }}</a>
+</li-->
+{#% endif %#}
+
+{#% endfor %#}
+
+{#% if pagination.has_next %#}
+<li class="next">
+<a  style='background-color: lightgoldenrodyellow;color: brown;'>
+»
+</a>
+</li>
+{#% endif %#}
+</ul>
+
+</body>
+
+
+</html>
